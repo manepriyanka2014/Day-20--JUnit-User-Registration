@@ -1,6 +1,5 @@
 package bridgelabz.junituser;
 
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,5 +47,11 @@ public class JunitUserRegistration {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+
+    public boolean passwordRule3(String password) {
+        regex = "^[a-z](?=.*[A-Z]+)(?=.*[0-9]+).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }
-   
